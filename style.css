@@ -1,0 +1,272 @@
+/* CSS Variables */
+:root {
+    --default-text-color: #ffffff;            /* Default text color */
+    --page-background-color: #121212;        /* Background color for the entire page */
+    --form-color: #282828;                   /* Background color for the search form */
+    --search-icon-color: #ffc107;            /* Color for search icon */
+    --card-color: #1e1e1e;                   /* Background color for movie cards */
+    --default-heart-color: #ffc107;          /* Default color for heart icons (favorite button) */
+    --heart-red-color: #e74c3c;              /* Color for heart icon when active */
+    --favourite-section-color: #282828;      /* Background color for the favorites section */
+    --fav-movie-card-color: #333333;         /* Background color for favorite movie cards */
+    --delete-button-color: #e74c3c;          /* Color for delete button (trash can icon) */
+}
+
+/* Body */
+body {
+    background-color: var(--page-background-color);   /* Applies the page background color */
+    color: var(--default-text-color);                 /* Sets the default text color */
+    font-family: 'Roboto', sans-serif;                /* Sets the font family for the entire page */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000000;                        /* Background color for the navbar */
+}
+
+.navbar-brand img {
+    height: 40px;                                     /* Sets the height of the navbar brand image */
+}
+
+#search-bar {
+    height: 40px;                                     /* Sets the height of the search bar */
+    width: 45vw;                                      /* Sets the initial width of the search bar */
+}
+
+form {
+    width: inherit;
+    background-color: var(--form-color);              /* Applies the background color for the search form */
+    border-radius: 50px;                              /* Adds rounded corners to the search form */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    transition: background-color 0.3s ease;           /* Smooth transition for background color */
+}
+
+form:hover {
+    background-color: #3a3a3a;                        /* Background color on hover */
+}
+
+input {
+    width: 90%;                                       /* Sets the width of the input field */
+    height: 2.5rem;                                   /* Sets the height of the input field */
+    outline: none;                                    /* Removes outline */
+    padding: 0.5rem;                                  /* Adds padding inside the input field */
+    border: none;                                     /* Removes border */
+    background-color: transparent;                    /* Makes background transparent */
+    color: var(--default-text-color);                  /* Sets text color */
+    font-size: 1rem;                                  /* Sets font size */
+}
+
+::placeholder {
+    opacity: 0.7;                                     /* Sets opacity for placeholder text */
+    color: var(--default-text-color);                  /* Sets color for placeholder text */
+}
+
+.search-icon {
+    font-size: 1.5rem;                                /* Sets size of search icon */
+    color: var(--search-icon-color);                   /* Sets color of search icon */
+}
+
+#show-favs {
+    display: none;                                    /* Initially hides the show favorites button */
+    font-size: 1.7rem;                                /* Sets size of show favorites button */
+    cursor: pointer;                                  /* Sets cursor to pointer on hover */
+}
+
+/* Main section */
+#main-sectn {
+    width: 65%;                                       /* Sets width of main section */
+    padding: 2rem;                                    /* Adds padding inside main section */
+}
+
+h2 {
+    padding: 0.5rem;                                  /* Adds padding around heading */
+    text-align: center;                               /* Centers text */
+    color: var(--default-text-color);                  /* Sets text color */
+    font-size: 1.5rem;                                /* Sets font size */
+    border-bottom: 2px solid var(--search-icon-color); /* Adds border bottom with search icon color */
+    margin-bottom: 1rem;                              /* Adds margin bottom */
+}
+
+#Sgstns-container {
+    padding: 2rem;                                    /* Adds padding around suggestions container */
+}
+
+/* Card */
+#card-container {
+    display: grid;                                    /* Displays cards in a grid */
+    gap: 2rem;                                        /* Adds gap between cards */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Sets grid columns */
+}
+
+.card {
+    background-color: var(--card-color);              /* Applies background color to card */
+    border: none;                                     /* Removes border */
+    border-radius: 10px;                              /* Adds rounded corners */
+    overflow: hidden;                                 /* Hides overflow content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.card:hover {
+    transform: scale(1.05);                           /* Scales card on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);         /* Adds box shadow on hover */
+}
+
+.card-img-top {
+    height: 12rem;                                    /* Sets height of card image */
+    object-fit: cover;                                /* Ensures image covers entire area */
+}
+
+.card-title {
+    font-size: 1rem;                                  /* Sets font size of card title */
+    font-weight: bold;                                /* Sets font weight of card title */
+    margin: 0.5rem 0;                                 /* Adds margin around card title */
+}
+
+.card-title a {
+    text-decoration: none;                            /* Removes underline from link */
+    color: var(--default-text-color);                  /* Sets text color */
+    transition: color 0.3s ease;                       /* Smooth transition for text color */
+}
+
+.card-title a:hover {
+    color: var(--search-icon-color);                   /* Sets text color on hover */
+}
+
+.card-text {
+    display: flex;                                    /* Displays elements in a flex container */
+    justify-content: space-between;                   /* Space between elements */
+    align-items: center;                              /* Centers items vertically */
+}
+
+.fa-star {
+    color: var(--search-icon-color);                   /* Sets color of star icon */
+}
+
+#rating {
+    color: var(--default-text-color);                  /* Sets text color */
+    font-size: 0.9rem;                                /* Sets font size */
+    font-weight: 600;                                 /* Sets font weight */
+}
+
+.fav-btn {
+    background: none;                                 /* Removes background */
+    border: none;                                     /* Removes border */
+    cursor: pointer;                                  /* Sets cursor to pointer */
+    color: var(--default-heart-color);                 /* Sets default heart icon color */
+}
+
+.fav-btn:hover {
+    color: var(--heart-red-color);                    /* Sets heart icon color on hover */
+}
+
+/* Favorites section */
+#favs-section {
+    width: 33%;                                       /* Sets width of favorites section */
+    padding: 2rem;                                     /* Adds padding inside favorites section */
+    background-color: var(--favourite-section-color);  /* Applies background color to favorites section */
+    overflow-y: auto;                                  /* Enables vertical scrollbar */
+}
+
+#empty-fav-text {
+    text-align: center;                               /* Centers text */
+    margin-top: 2rem;                                  /* Adds margin top */
+}
+
+#fav-movies-container {
+    margin-top: 2rem;                                  /* Adds margin top */
+}
+
+.fav-movie-card {
+    display: flex;                                    /* Displays elements in a flex container */
+    align-items: center;                              /* Centers items vertically */
+    background-color: var(--fav-movie-card-color);     /* Applies background color to favorite movie cards */
+    padding: 0.5rem;                                  /* Adds padding inside card */
+    margin-bottom: 1rem;                              /* Adds margin bottom */
+    border-radius: 10px;                              /* Adds rounded corners */
+    transition: background-color 0.3s ease;           /* Smooth transition for background color */
+}
+
+.fav-movie-card:hover {
+    background-color: #444444;                        /* Background color on hover */
+}
+
+.fav-movie-poster {
+    width: 80px;                                      /* Sets width of movie poster */
+    height: 100px;                                    /* Sets height of movie poster */
+    border-radius: 5px;                               /* Adds rounded corners to poster */
+    object-fit: cover;                                /* Ensures poster covers entire area */
+}
+
+.fav-movie-name {
+    color: var(--default-text-color);                  /* Sets text color */
+    text-decoration: none;                            /* Removes underline from link */
+    margin-left: 1rem;                                /* Adds margin left */
+    flex-grow: 1;                                     /* Allows element to grow */
+}
+
+.fav-movie-name:hover {
+    color: var(--search-icon-color);                   /* Sets text color on hover */
+}
+
+.delete-btn {
+    background: none;                                 /* Removes background */
+    border: none;                                     /* Removes border */
+    cursor: pointer;                                  /* Sets cursor to pointer */
+}
+
+.fa-trash-can {
+    color: var(--delete-button-color);                 /* Sets color of trash can icon */
+}
+
+.fa-trash-can:hover {
+    color: var(--heart-red-color);                    /* Sets trash can icon color on hover */
+}
+
+/* Scrollbar customization */
+#fav-movies-container::-webkit-scrollbar {
+    width: 5px;                                       /* Sets width of scrollbar */
+}
+
+#fav-movies-container::-webkit-scrollbar-thumb {
+    background: #555555;                              /* Sets color of scrollbar thumb */
+    border-radius: 10px;                              /* Adds rounded corners to scrollbar thumb */
+}
+
+/* Responsiveness */
+@media screen and (max-width: 992px) {
+    #main-sectn {
+        width: 100%;                                  /* Sets width to full width */
+    }
+
+    #favs-section {
+        width: 100%;                                  /* Sets width to full width */
+        height: auto;                                 /* Sets height to auto */
+        position: relative;                           /* Sets position to relative */
+        padding: 1rem;                                /* Adds padding */
+    }
+
+    #show-favs {
+        display: block;                               /* Displays show favorites button */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #search-bar {
+        width: 80%;                                   /* Sets width of search bar */
+    }
+
+    #card-container {
+        grid-template-columns: repeat(2, 1fr);         /* Sets grid columns for smaller screens */
+    }
+
+    .card {
+        width: 100%;                                   /* Sets card width to full width */
+    }
+}
+
+#icocolor {
+    color: grey;                                       /* Sets color of icocolor */
+}

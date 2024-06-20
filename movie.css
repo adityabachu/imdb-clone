@@ -1,0 +1,95 @@
+/* CSS Variables */
+:root {
+    --default-text-color: #fff;           /* Default text color */
+    --page-background-color: #073240;     /* Page background color */
+    --card-text-color: rgb(232, 233, 243); /* Text color for cards */
+    --info-color: #7dabef;                /* Color for information texts */
+  }
+  
+  body {
+    background-color: var(--page-background-color); /* Set page background color */
+    color: var(--default-text-color);                /* Set default text color */
+  }
+  
+  /* NAVBAR */
+  .fa-star {
+    color: var(--card-text-color);   /* Color for star icons */
+  }
+  
+  .site-name {
+    color: #ffc107;                  /* Color for site name */
+    position: absolute;
+    font-size: 2rem;
+    margin-top: -1.5rem;
+    top: 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  #btn {
+    float: right !important;         /* Align button to right */
+    justify-items: end;              /* Align items to end */
+  }
+  
+  /* Movie card */
+  .card {
+    border: 0;
+    background: radial-gradient(
+      circle at 10% 20%,
+      rgb(0, 0, 0) 0%,
+      rgb(64, 64, 64) 90.2%
+    );
+    box-shadow: 0px 16px 24px 2px hsla(0, 0%, 0%, 0.14),
+      0px 6px 30px 5px hsla(0, 0%, 0%, 0.12),
+      0px 8px 10px -5px hsla(0, 0%, 0%, 0.2);   /* Box shadow for card */
+  }
+  
+  .card-text {
+    text-align: justify;            /* Justify text in card */
+    font-size: 1.1rem;              /* Font size for card text */
+    font-weight: 400;               /* Font weight for card text */
+    color: var(--card-text-color);  /* Text color for card text */
+  }
+  
+  .info-type {
+    font-size: 1.1rem;              /* Font size for information type */
+    font-weight: 500;               /* Font weight for information type */
+    color: var(--default-text-color); /* Text color for information type */
+  }
+  
+  .information {
+    font-weight: 500;               /* Font weight for information */
+    font-size: 0.9em;               /* Font size for information */
+    color: var(--info-color);       /* Color for information */
+  }
+  
+  /* Responsiveness */
+  @media screen and (max-width: 767px) {
+    #poster {
+      margin-top: 1rem;             /* Margin top for poster image */
+      border-radius: 5px !important; /* Border radius for poster image */
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .site-name {
+      margin-top: -1rem;            /* Adjust site name margin top */
+    }
+    
+    #title {
+      font-size: x-large;           /* Font size for title on smaller screens */
+    }
+  
+    h6 {
+      font-size: medium;            /* Font size for h6 headings on smaller screens */
+    }
+  
+    h5 {
+      font-size: medium;            /* Font size for h5 headings on smaller screens */
+    }
+  
+    #poster {
+      margin-top: 0px;              /* Adjust poster image margin top */
+      width: 100%;                  /* Full width for poster image on smaller screens */
+    }
+  }
+  
