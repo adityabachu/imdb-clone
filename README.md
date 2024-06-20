@@ -20,18 +20,7 @@ https://adityabachu.github.io/imdb-clone/
 - OMDB API
 
 
-## File Structure
-
-.
-├── assets/
-│ └── imdb.png
-├── index.html
-├── movie.html
-├── movie.css
-├── movie.js
-├── README.md
-
-
+## Files
 
 - **index.html**: The homepage with the search functionality.
 - **movie.html**: The page displaying detailed information about a selected movie.
