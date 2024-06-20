@@ -3,7 +3,7 @@
 A simple web application that allows users to search for movies and view their details, inspired by IMDB. This project uses the OMDB API to fetch movie data.
 
 ## Live Project
-
+https://adityabachu.github.io/imdb-clone/
 
 ## Features
 
